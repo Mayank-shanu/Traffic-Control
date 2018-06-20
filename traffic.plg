@@ -1,0 +1,248 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\keil\traffic_control\traffic.uvproj
+Project File Date:  06/20/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+Target has no object modules
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(19): error C141: syntax error near '=', expected ')'
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(23): warning C209: '_control': too few actual parameters
+CONTROL_CODE.C(25): warning C209: '_control': too few actual parameters
+CONTROL_CODE.C(31): error C141: syntax error near '=', expected ')'
+CONTROL_CODE.C(45): error C202: 'off': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(23): warning C209: '_control': too few actual parameters
+CONTROL_CODE.C(25): warning C209: '_control': too few actual parameters
+CONTROL_CODE.C(31): error C141: syntax error near '=', expected ')'
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(23): warning C209: '_control': too few actual parameters
+CONTROL_CODE.C(25): warning C209: '_control': too few actual parameters
+CONTROL_CODE.C(31): error C236: '_control': different length of parameter lists
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+linking...
+Program Size: data=41.0 xdata=0 code=715
+"traffic" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+linking...
+Program Size: data=41.0 xdata=0 code=724
+"traffic" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+linking...
+Program Size: data=41.0 xdata=0 code=724
+"traffic" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(54): warning C206: 'lcd_update': missing function-prototype
+CONTROL_CODE.C(54): error C267: 'lcd_update': requires ANSI-style prototype
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(87): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(87): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(91): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(94): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=45.0 xdata=0 code=809
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(91): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(91): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(95): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(110): error C202: 'i': undefined identifier
+CONTROL_CODE.C(111): error C202: 'i': undefined identifier
+CONTROL_CODE.C(113): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(91): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(91): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(95): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(111): error C202: 'ct': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(91): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(91): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(95): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=71.0 xdata=0 code=1004
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(96): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(96): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(100): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(103): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=71.0 xdata=0 code=1032
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(98): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(102): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(105): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=71.0 xdata=0 code=1038
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(98): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(102): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(105): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=71.0 xdata=0 code=1038
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(98): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(102): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(105): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=71.0 xdata=0 code=1038
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(98): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(102): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(105): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=71.0 xdata=0 code=1038
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(98): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(98): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(102): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(105): warning C280: 'ch': unreferenced local variable
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_COMMAND_LCD?CONTROL_CODE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=71.0 xdata=0 code=1038
+"traffic" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(105): warning C280: 'rd1_mess': unreferenced local variable
+CONTROL_CODE.C(105): warning C280: 're2_mess': unreferenced local variable
+CONTROL_CODE.C(109): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(117): warning C235: parameter 1: different types
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DATA_LCD?CONTROL_CODE
+Program Size: data=67.0 xdata=0 code=1119
+"traffic" - 0 Error(s), 5 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(111): error C214: illegal pointer conversion
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(112): error C214: illegal pointer conversion
+Target not created
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(106): warning C280: 'i': unreferenced local variable
+CONTROL_CODE.C(107): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(117): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(126): warning C260: '=': pointer truncation
+linking...
+Program Size: data=67.0 xdata=0 code=1154
+"traffic" - 0 Error(s), 4 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(116): warning C280: 'ch': unreferenced local variable
+CONTROL_CODE.C(125): warning C260: '=': pointer truncation
+linking...
+Program Size: data=67.0 xdata=0 code=1154
+"traffic" - 0 Error(s), 2 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(128): warning C260: '=': pointer truncation
+linking...
+Program Size: data=67.0 xdata=0 code=1241
+"traffic" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+linking...
+Program Size: data=67.0 xdata=0 code=1248
+"traffic" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+CONTROL_CODE.C(125): warning C280: 'ch': unreferenced local variable
+linking...
+Program Size: data=67.0 xdata=0 code=1133
+"traffic" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+linking...
+Program Size: data=67.0 xdata=0 code=1239
+"traffic" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+linking...
+Program Size: data=67.0 xdata=0 code=1239
+"traffic" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+linking...
+Program Size: data=67.0 xdata=0 code=1240
+"traffic" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling control_code.c...
+linking...
+Program Size: data=67.0 xdata=0 code=1246
+"traffic" - 0 Error(s), 0 Warning(s).

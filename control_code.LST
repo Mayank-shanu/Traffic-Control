@@ -1,0 +1,224 @@
+C51 COMPILER V9.02   CONTROL_CODE                                                          06/20/2018 21:12:40 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE CONTROL_CODE
+OBJECT MODULE PLACED IN control_code.OBJ
+COMPILER INVOKED BY: C:\Keil_v5_nielit\C51\BIN\C51.EXE control_code.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include<reg52.h>
+   2          #define RD1 1
+   3          #define RD2 2
+   4          #define R 1
+   5          #define Y 2
+   6          #define G 3
+   7          #define r1_red "Road 1 : STOP!"
+   8          #define r1_yellow "Road 1 : SLOW!"
+   9          #define r1_green "Road 1 : GO!"
+  10          #define r2_red "Road 1 : STOP!"
+  11          #define r2_yellow "Road 1 : SLOW!"
+  12          #define r2_green "Road 1 : GO!"
+  13          #define init_count 9
+  14          #define buz_delay 80
+  15          
+  16          
+  17           //def p0 as counter or seven segment
+  18          //def P2 as led
+  19          //def p2.7 as buzzer
+  20          //def P2.3 as  seven_segment
+  21          //def P3 as rs,rd/wr,en
+  22          //P1 as lcd
+  23          
+  24          sbit led_red_rd1 = P2^0;
+  25          sbit led_yellow_rd1 = P2^1;
+  26          sbit led_green_rd1 = P2^2;
+  27          
+  28          sbit led_red_rd2 = P2^4;
+  29          sbit led_yellow_rd2 = P2^5;
+  30          sbit led_green_rd2 = P2^6;
+  31          
+  32          sbit buz = P2^7;
+  33          sbit seven_segment = P2^3;
+  34          
+  35          sbit RS = P3^0;
+  36          sbit RD_WR = P3^1;
+  37          sbit EN = P3^2;
+  38          
+  39          void assign_led(int rd1_lgt[3],int rd2_lgt[3]);
+  40          void delay(int k);
+  41          void command_lcd(char ch);
+  42          void data_lcd(char ch[16]);
+  43          void lcd_control(char rd1_mess[16],char re2_mess[16]);
+  44          void initialize_lcd();
+  45          void buzzer_blink_seven_seg();
+  46          void counter(int);
+  47          void control(int);
+  48          
+  49          void main(){
+  50   1                 P1=P2=P3=P0=0x00;
+  51   1                 initialize_lcd();
+  52   1      
+  53   1                 while(1){
+  54   2                              control(R);
+  55   2                              delay(100);
+C51 COMPILER V9.02   CONTROL_CODE                                                          06/20/2018 21:12:40 PAGE 2   
+
+  56   2                              control(G);
+  57   2                              delay(100);
+  58   2                 }
+  59   1      
+  60   1      }
+  61          
+  62          void control(int status){//,int road=RD1){
+  63   1              //only rd1 is checked
+  64   1              int red[3]={1,0,0};
+  65   1              int green[3]={0,0,1};
+  66   1              int on[3] = {1,1,1};
+  67   1              int off[3]={0,0,0};
+  68   1              switch(status){
+  69   2                      case R: assign_led(red,green);
+  70   2                                      lcd_control(r1_red,r2_green);
+  71   2                                      counter(R);
+  72   2                                      break;
+  73   2                      case G: assign_led(green,red);
+  74   2                                      lcd_control(r1_green,r2_red);
+  75   2                                      counter(G);
+  76   2                                      break;
+  77   2                      default:        while(1){
+  78   3                                                      assign_led(on,on);
+  79   3                                                      delay(250);
+  80   3                                                      assign_led(off,off);
+  81   3                                                      delay(250);     
+  82   3                                              }
+  83   2                                      break;
+  84   2              }
+  85   1      }
+  86          
+  87          void assign_led(int rd1_lgt[3],int rd2_lgt[3]){
+  88   1      
+  89   1                         led_red_rd1 = rd1_lgt[0];
+  90   1                         led_yellow_rd1 = rd1_lgt[1];
+  91   1                         led_green_rd1 = rd1_lgt[2];
+  92   1      
+  93   1                         led_red_rd2 = rd2_lgt[0];
+  94   1                         led_yellow_rd2 = rd2_lgt[1];
+  95   1                         led_green_rd2 = rd2_lgt[2];
+  96   1      
+  97   1      }
+  98          void delay(int k){
+  99   1              int i,j;
+ 100   1              for(i=0;i<k;++i){
+ 101   2                      for(j=0;j<k;++j);
+ 102   2              }
+ 103   1      }
+ 104          
+ 105          void lcd_control(char rd1_mess[16],char rd2_mess[16]){
+ 106   1      
+ 107   1              command_lcd(0x80);
+ 108   1              delay(10);
+ 109   1              data_lcd(rd1_mess);
+ 110   1      
+ 111   1              command_lcd(0x0c0);
+ 112   1              delay(10);
+ 113   1              data_lcd(rd2_mess);
+ 114   1      }
+ 115          
+ 116          void command_lcd(char ch){
+ 117   1              P1 = ch;
+C51 COMPILER V9.02   CONTROL_CODE                                                          06/20/2018 21:12:40 PAGE 3   
+
+ 118   1              RS = 0;
+ 119   1              RD_WR = 0;
+ 120   1              EN = 1;
+ 121   1              delay(5);
+ 122   1              EN=0;
+ 123   1              delay(2);
+ 124   1      }
+ 125          void data_lcd(char ch[16]){
+ 126   1              int i=0;
+ 127   1              while(i<=15){
+ 128   2                      delay(1000);
+ 129   2                      P1 = ch[i];
+ 130   2                      RS = 1;
+ 131   2                      RD_WR = 0;
+ 132   2                      EN = 1;
+ 133   2                      delay(5);
+ 134   2                      EN=0;
+ 135   2                      delay(10);
+ 136   2                      ++i;
+ 137   2              }  
+ 138   1      }
+ 139          void initialize_lcd(){
+ 140   1              command_lcd(0x38);
+ 141   1              delay(10);
+ 142   1      
+ 143   1              command_lcd(0x01);
+ 144   1              delay(10);
+ 145   1      
+ 146   1              command_lcd(0x0f);
+ 147   1              delay(10);
+ 148   1      
+ 149   1              command_lcd(0x0e);
+ 150   1              delay(10);
+ 151   1      
+ 152   1              command_lcd(0x3c);
+ 153   1              delay(10);
+ 154   1      
+ 155   1              command_lcd(0x80);
+ 156   1              delay(10);
+ 157   1      }
+ 158          void counter(int stat){
+ 159   1              int i=10;
+ 160   1              int red[3]={1,0,0};
+ 161   1              int yellow[3]={0,1,0};
+ 162   1              char equivalent_no[10]={0xC0,0xf9,0xA4,0xB0,0x99,0x92,0x82,0xf8,0x80,0x98};
+ 163   1              seven_segment = 1;
+ 164   1      
+ 165   1              for(i = 9;i>=0;--i){
+ 166   2                       P0 = equivalent_no[i];
+ 167   2                       delay(150);
+ 168   2                       if(i==5){
+ 169   3                              if(stat == R){
+ 170   4                                      assign_led(red,yellow); 
+ 171   4                              }
+ 172   3                              else if(stat == G){
+ 173   4                                      assign_led(yellow,red); 
+ 174   4                              }
+ 175   3                       }
+ 176   2                       if(i<=5){
+ 177   3                              buzzer_blink_seven_seg();
+ 178   3                       }
+ 179   2              }
+C51 COMPILER V9.02   CONTROL_CODE                                                          06/20/2018 21:12:40 PAGE 4   
+
+ 180   1      }
+ 181          
+ 182          void buzzer_blink_seven_seg(){
+ 183   1                buz= 1;
+ 184   1                seven_segment = 0;
+ 185   1                delay(buz_delay);
+ 186   1                seven_segment = 1;
+ 187   1                buz=0;
+ 188   1      }
+ 189          
+ 190          
+ 191          
+ 192          
+ 193          
+ 194          
+ 195          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    767    ----
+   CONSTANT SIZE    =     74    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      69
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
