@@ -7,19 +7,19 @@
 #define r1_red "Road 1 : STOP!"
 #define r1_yellow "Road 1 : SLOW!"
 #define r1_green "Road 1 : GO!"
-#define r2_red "Road 1 : STOP!"
-#define r2_yellow "Road 1 : SLOW!"
-#define r2_green "Road 1 : GO!"
+#define r2_red "Road 2 : STOP!"
+#define r2_yellow "Road 2 : SLOW!"
+#define r2_green "Road 2 : GO!"
 #define init_count 9
 #define buz_delay 80
 
 
- //def p0 as counter or seven segment
-//def P2 as led
-//def p2.7 as buzzer
-//def P2.3 as  seven_segment
-//def P3 as rs,rd/wr,en
-//P1 as lcd
+ //def pin p0 as counter or seven segment
+//def pin P2 as led
+//def pin p2.7 as buzzer
+//def pin P2.3 as  seven_segment
+//def pin P3 as rs,rd/wr,en
+//def pin P1 as lcd
 
 sbit led_red_rd1 = P2^0;
 sbit led_yellow_rd1 = P2^1;
@@ -37,7 +37,7 @@ sbit RD_WR = P3^1;
 sbit EN = P3^2;
 
 void assign_led(int rd1_lgt[3],int rd2_lgt[3]);
-void delay(int k);
+void delay(int k); 
 void command_lcd(char ch);
 void data_lcd(char ch[16]);
 void lcd_control(char rd1_mess[16],char re2_mess[16]);
